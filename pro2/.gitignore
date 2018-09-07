@@ -4,7 +4,7 @@
 /node_modules
 
 # webstorm
-/.idea
+*/.idea
 
 # testing
 /coverage

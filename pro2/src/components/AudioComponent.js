@@ -4,18 +4,15 @@ import React, {Component} from 'react';
  * Component that plays chosen audio when one
  * presses the button on this component.
  */
-class Audio extends Component {
+class AudioComponent extends Component {
     constructor(props) {
         super(props);
         this._playSound = this._playSound.bind(this);
-
         this.state = {
             audioHund: "hundbjeff.wav",
             audioKatt: "",
             audioElefant: "ElefantSnabelLyd.mp3"
         }
-
-
     }
 
     render() {
@@ -35,11 +32,14 @@ class Audio extends Component {
      */
     _playSound() {
         // TODO: Make the audio play in the browser
-        for (let i = 0; i < this.state.length ; i++) {
-            let audio_file = this.state[i];
-            if (audio_file !== "") {
-                let audio = new Audio(audio_file);
-                audio.play();
+        let ts = this.state;
+        for (let key in ts) {
+            if (ts.hasOwnProperty(key) && ts[key] !== "") {
+                let file_name = ts[key];
+                let audio = new Audio(file_name);
+                audio.play().then(() =>
+                    console.log("Playing song ${file_name}")
+                );
             }
         }
     }
@@ -54,6 +54,7 @@ class Audio extends Component {
         let count = 0;
         let ts = this.state;
         for (let key in ts) {
+            // TODO: Consider making a _validFile function
             if (ts.hasOwnProperty(key) && ts[key] !== "") {
                     count++;
             }
@@ -61,8 +62,17 @@ class Audio extends Component {
         return count;
     }
 
+    // Better to pass data as props than to have functionality inside 'bottom'-component.
+    componentDidUpdate() {
+        let xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState = 4 && )
+        }
 
-
+    }
 }
 
-export default Audio;
+export default AudioComponent;
+
+// TODO: place sources for .mp3 correctly.
+// https://freesound.org/people/Princess6537/sounds/144885/
