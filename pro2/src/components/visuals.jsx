@@ -1,56 +1,56 @@
 import React, { Component } from "react";
 import $ from "jquery";
+import ReactDOM from "react-dom";
+import axios from "axios";
 
 class Visuals extends Component {
   state = {
-    url: "Example.svg"
+    image: null
   };
 
   constructor() {
     super();
   }
 
-  imageStyle = {
-    width: 200,
-    height: 200
-  };
+  componentDidMount() {
+    this.setImage("Cat4");
+  }
 
-  funksjon() {
-    console.log("hei");
-    fetch("Example.svg").then(function(response) {
-      // perform setState here
-      $("#bilde").append(response);
+  getRandomInt() {
+    return Math.floor(Math.random() * 4) + 1;
+  }
+
+  setRandomCat() {
+    var name = "Cat" + this.getRandomInt();
+    this.setImage(name);
+  }
+
+  setRandomDog() {
+    var name = "Dog" + this.getRandomInt();
+    this.setImage(name);
+  }
+
+  setRandomElephant() {
+    var name = "Elephant" + this.getRandomInt();
+    this.setImage(name);
+  }
+
+  setImage(name) {
+    axios.get(`./media/images/` + name + ".svg").then(response => {
+      const image = response.data;
+      this.setState({ image });
+      $("#bilde").html(this.state.image);
+      var svgBilde = $("#bilde").find("svg")[0];
     });
   }
 
   render() {
     return (
       <div>
-        <div id="bilde">
-          <svg>
-            <circle cx={50} cy={50} r={10} fill="yellow" />
-          </svg>
-        </div>
-        <button
-          id="knapp"
-          onClick={() => {
-            this.funksjon();
-          }}
-        >
-          Klikk meg!
-        </button>
+        <div id="bilde">Faulty image url</div>
       </div>
     );
   }
 }
-
-$(document).ready(function() {
-  $("#knapp").on("click", "button.switch", function() {
-    console.log("hei");
-    $.ajax("Example.svg").done(function(response) {
-      $("#bilde").html(response);
-    });
-  });
-});
 
 export default Visuals;
