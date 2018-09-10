@@ -26,3 +26,13 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.diktTekst{
+  text-align: center;
+  background-color: red;
+  margin: auto;
+  width: 50%;
+}
+
+.diktTittel{
+  font-style: italic;
+}
