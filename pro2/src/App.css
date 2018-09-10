@@ -55,10 +55,14 @@ body {
   border-style: groove;
   padding: 5px;
   margin: 5px;
+  background-color: white;
 }
 
 #bilde {
   position: relative;
+  margin: auto;
+  display: block;
+  right: 100px;
 }
 
 .App-title {

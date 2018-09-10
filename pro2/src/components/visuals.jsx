@@ -13,7 +13,7 @@ class Visuals extends Component {
   }
 
   componentDidMount() {
-    this.setImage("Elephant4");
+    this.setRandomElephant();
   }
 
   getRandomInt() {

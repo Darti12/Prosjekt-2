@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import $ from "jquery";
 import PropTypes from "prop-types";
 import Tab from "./tab";
+import Visuals from "./visuals";
 
 class Tabs extends Component {
   static propTypes = {
@@ -47,7 +48,13 @@ class Tabs extends Component {
         <div className="tab-content">
           {children.map(child => {
             if (child.props.label !== activeTab) return undefined;
-            return child.props.children;
+            return (
+              //Legg inn standard oppsett på taben her
+              <div>
+                <h1>Content!: </h1>
+                <Visuals />
+              </div>
+            );
           })}
         </div>
       </div>
