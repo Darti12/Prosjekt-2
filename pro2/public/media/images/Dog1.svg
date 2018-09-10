@@ -4,6 +4,9 @@
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
    version="1.0"
+   width="600"
+   height="600"
+   viewBox="0 0 1 1"
    id="svg2">
   <defs
      id="defs3497" />

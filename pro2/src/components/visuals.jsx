@@ -13,7 +13,7 @@ class Visuals extends Component {
   }
 
   componentDidMount() {
-    this.setImage("Cat4");
+    this.setImage("Elephant4");
   }
 
   getRandomInt() {
@@ -40,7 +40,6 @@ class Visuals extends Component {
       const image = response.data;
       this.setState({ image });
       $("#bilde").html(this.state.image);
-      var svgBilde = $("#bilde").find("svg")[0];
     });
   }
 

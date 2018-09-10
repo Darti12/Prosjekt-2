@@ -16,6 +16,11 @@
 
 #bilde > svg {
   position: absolute;
+  width: 200px;
+  height: 200px;
+  border-style: groove;
+  padding: 5px;
+  margin: 5px;
 }
 
 #bilde {
