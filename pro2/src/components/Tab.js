@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 
 
 class Tab extends Component {
-    constructor() {
+    /*constructor() {
         super();
-    }
+    }*/
 
     render() {
         return (
@@ -17,4 +17,4 @@ class Tab extends Component {
     }
 }
 
-export default Tab();
+export default Tab;

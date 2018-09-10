@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component}  from 'react';
 import logo from './logo.svg';
-import TextComponent from './TextComponent.js'
 import './App.css';
 
 // components
 import Tab from './components/Tab.js';
+import TextComponent from './components/TextComponent.js'
 
 
 class App extends Component {
@@ -19,10 +19,9 @@ class App extends Component {
               To get started, edit <code>src/App.js</code> and save to reload.
             </p>
             <Tab/>
+              <TextComponent/>
           </div>
         );
       }
 }
-
 export default App;
-
