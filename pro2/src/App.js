@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 import React, { Component } from 'react';
 import './App.css';
 
 
+=======
+import React, { Component } from "react";
+import "./App.css";
+import Tabs from "./components/Tabs";
+>>>>>>> Development
 
 // components
 import Tabs from "./components/Tabs.jsx";
