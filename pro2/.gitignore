@@ -3,11 +3,21 @@
 # dependencies
 /node_modules
 
+# webstorm
+*/.idea
+
+# VS Code
+*/.vscode
+
 # testing
 /coverage
 
 # production
 /build
+
+# package.json
+./package.json
+./package-lock.json
 
 # misc
 .DS_Store
