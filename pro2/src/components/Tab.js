@@ -6,8 +6,7 @@ import AudioComponent from './AudioComponent.js';
  * Tab component that takes care of text, visuals and audio.
  */
 class Tab extends Component {
-    constructor() {
-        super();
+
         this.state = {
             audioHund: "",
             audioKatt: "",
@@ -16,6 +15,7 @@ class Tab extends Component {
         this._getAudioFile = this._getAudioFile.bind(this);
 
     }
+
 
     render() {
         return (
@@ -73,6 +73,4 @@ class Tab extends Component {
             })
     }
 }
-
-
 export default Tab;

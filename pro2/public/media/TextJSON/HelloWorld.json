@@ -1,0 +1,86 @@
+[
+  {
+    "id" : 1,
+    "tittel": "Kattemannneen",
+    "firstLine": "En katt spiser gummi",
+    "secondLine": "Gummi er godt",
+    "thirdLine": "Men de kan ikke overleve dette"
+  },
+  {
+    "id": 2,
+    "tittel": "Kattedama",
+    "firstLine": "asdlasdnksajd",
+    "secondLine": "fkdsfflknsdfldnsdflfdnsl",
+    "thirdLine": "sdksdfksdkføjsdfkøsdfkødf"
+  },
+  {
+    "id": 3,
+    "tittel": "KatteBarna",
+    "firstLine": "dsødkfkøsdkøsdfkøsdføkdsfkdksø",
+    "secondLine": "sødfmdsfløsdfølsdømdøkkdsøt",
+    "thirdLine": "aaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  {
+    "id": 4,
+    "tittel": "KattteDød",
+    "firstLine": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "secondLine": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "thirdLine": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  },
+  {
+    "id": 5,
+    "tittel": "Hundemannen",
+    "firstLine": "ccccccccccccccccccccccccc",
+    "secondLine": "ccccccccccccccccccccccccc",
+    "thirdLine": "ccccccccccccccccccccccccc"
+  },
+  {
+    "id": 6,
+    "tittel": "HundeDama",
+    "firstLine": "DDDDDDDDDDDDDDDDDDDDDDDDD",
+    "secondLine": "DDDDDDDDDDDDDDDDDDDDDDDDD",
+    "thirdLine": "DDDDDDDDDDDDDDDDDDDDDDDDD"
+  },
+  {
+    "id": 7,
+    "tittel": "HundeBarna",
+    "firstLine": "EEEEEEEEEEEEEEEEEEEEE",
+    "secondLine": "EEEEEEEEEEEEEEEEEEEEE",
+    "thirdLine": "EEEEEEEEEEEEEEEEEEEEE"
+  },
+  {
+    "id": 8,
+    "tittel": "HundeDød",
+    "firstLine": "ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ",
+    "secondLine": "ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ",
+    "thirdLine": "ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ"
+  },
+  {
+    "id": 9,
+    "tittel": "ElefantDama",
+    "firstLine": "OOOOOOOOOOOOOOOO",
+    "secondLine": "OOOOOOOOOOOOOOOO",
+    "thirdLine": "OOOOOOOOOOOOOOOO"
+  },
+  {
+    "id": 10,
+    "tittel": "Elefantmannen",
+    "firstLine": "WWWWWWWWWWWWWWWWWWWWW",
+    "secondLine": "WWWWWWWWWWWWWWWWWWWWW",
+    "thirdLine": "WWWWWWWWWWWWWWWWWWWWW"
+  },
+  {
+    "id": 11,
+    "tittel": "ElefantBarna",
+    "firstLine": ")))))))))))))))))))))",
+    "secondLine": ")))))))))))))))))))))",
+    "thirdLine": ")))))))))))))))))))))"
+  },
+  {
+    "id": 12,
+    "tittel": "ElefantDød",
+    "firstLine": "QQQQQQQQQQQQQQQQQQQQQQQQQQQQ",
+    "secondLine": "QQQQQQQQQQQQQQQQQQQQQQQQQQQQ",
+    "thirdLine": "QQQQQQQQQQQQQQQQQQQQQQQQQQQQ"
+  }
+]

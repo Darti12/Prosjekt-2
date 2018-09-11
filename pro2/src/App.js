@@ -7,7 +7,11 @@ import Visuals from "./components/Visuals.jsx";
 
 class App extends Component {
   render() {
-    return <div className="App" />;
+    return;
+    <div className="App">
+      <Tabs />
+      <choices />
+    </div>;
   }
 }
 
