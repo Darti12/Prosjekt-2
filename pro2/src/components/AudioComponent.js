@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-// import dog from "../media/audio/woof1_short.mp3";
 
 /**
  * Component that plays chosen audio when one
@@ -10,11 +9,7 @@ class AudioComponent extends Component {
     constructor(props) {
         super(props);
         this._playSound = this._playSound.bind(this);
-        this.state = {
-            audioHund: this.props.audio1,
-            audioKatt: this.props.audio2,
-            audioElefant: this.props.audio3
-        }
+        this._countFiles = this._countFiles.bind(this);
     }
 
     render() {
@@ -34,19 +29,17 @@ class AudioComponent extends Component {
      */
     _playSound() {
         // TODO: Make the audio play in the browser
-        let ts = this.state;
+        let ts = this.props;
         for (let key in ts) {
-            if (ts.hasOwnProperty(key) && ts[key] !== undefined) {
-                let file_name = ts[key];
-                let audio = new Audio(file_name);
-                audio.play().then(() =>
-                    console.log("Playing song " + file_name)
-                );
-            }
+                if (ts.hasOwnProperty(key) && ts[key] !== "") {
+                    let obj = ts[key];
+                    let audio = new Audio(obj);
+                    audio.play().then(() => {
+                        console.log("Playing song inside loop" )
+                        console.log(key);
+                    });
+                }
         }
-
-        let audio = new Audio();
-        audio.play().then(() => console.log("Playing dog"));
     }
 
     /**
@@ -72,3 +65,4 @@ export default AudioComponent;
 
 // TODO: place sources for .mp3 correctly.
 // https://freesound.org/people/Princess6537/sounds/144885/
+// https://freesound.org/people/arightwizard/sounds/253754/
