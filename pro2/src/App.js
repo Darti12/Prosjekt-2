@@ -1,41 +1,25 @@
 import React, { Component } from 'react';
 import './App.css';
 
+
+
 // components
-import Tab from './components/Tab.js';
+import Tabs from "./components/Tabs.jsx";
+
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            signedIn: false
-        };
-        this._onAuthComplete = this._onAuthComplete.bind(this);
-    }
-
-    render() {
-        return (
-            <div>
-                <Tab/>
-            </div>
-        );
-    }
-
-    _onAuthComplete(result) {
-        // let the child auth component control behavior here
-        if (result) {
-            this.setState({
-                    signedIn: true
-                }
-            )
-        }
-    }
-
-    _onLogout() {
-        this.setState({
-            signedIn: false
-        });
-    }
+  render() {
+    return (
+      <div className="App">
+        <Tabs>
+          <div label="Tab 1" />
+          <div label="Tab 2" />
+          <div label="Tab 3" />
+          <div label="Tab 4" />
+        </Tabs>
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -6,6 +6,9 @@
 # webstorm
 */.idea
 
+# VS Code
+*/.vscode
+
 # testing
 /coverage
 
@@ -13,8 +16,8 @@
 /build
 
 # package.json
-package.json
-package-lock.json
+./package.json
+./package-lock.json
 
 # misc
 .DS_Store
