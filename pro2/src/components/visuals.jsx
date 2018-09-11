@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import $ from "jquery";
-import ReactDOM from "react-dom";
 import axios from "axios";
 
 class Visuals extends Component {

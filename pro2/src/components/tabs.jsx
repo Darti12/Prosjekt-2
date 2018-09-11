@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import $ from "jquery";
 import PropTypes from "prop-types";
 import Tab from "./Tab";
 import Visuals from "./Visuals";
