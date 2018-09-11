@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import $ from "jquery";
 import PropTypes from "prop-types";
-import Tab from "./tab";
-import Visuals from "./visuals";
+import Tab from "./Tab";
+import Visuals from "./Visuals";
 
 class Tabs extends Component {
   static propTypes = {
