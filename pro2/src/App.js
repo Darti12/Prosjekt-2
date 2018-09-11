@@ -1,12 +1,15 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Visuals from "./components/Visuals";
+import Tabs from "./components/Tabs";
 
 // components
 import Tab from './components/Tab.js';
 
 
 class App extends Component {
+<<<<<<< HEAD
     render() {
         return (
           <div className="App">
@@ -21,6 +24,22 @@ class App extends Component {
           </div>
         );
       }
+=======
+  render() {
+    return (
+      <div className="App">
+        <Tabs>
+          <div label="Tab 1">
+            <Visuals />
+          </div>
+          <div label="Tab 2" />
+          <div label="Tab 3" />
+          <div label="Tab 4" />
+        </Tabs>
+      </div>
+    );
+  }
+>>>>>>> Development-tabs
 }
 
 export default App;

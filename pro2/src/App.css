@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+body {
+  background-color: rgb(214, 214, 214);
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -14,6 +18,53 @@
   color: white;
 }
 
+.tabs {
+  display: grid;
+  margin: 1em 5em 0em 5em;
+}
+
+.tab-list {
+  border-bottom: 1px solid rgb(0, 0, 0);
+  padding-left: 0;
+  display: flex;
+}
+
+.tab-list-item {
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  padding: 1.5rem 2rem;
+}
+
+.tab-list-active {
+  background-color: rgb(148, 148, 148);
+  border: solid rgb(0, 0, 0);
+  border-width: 1px 1px 0 1px;
+}
+
+.tab-content {
+  margin: 2em 5em 0em 5em;
+  font-family: Verdana, sans-serif;
+  font-style: normal;
+}
+
+#bilde > svg {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-style: groove;
+  padding: 5px;
+  margin: 5px;
+  background-color: white;
+}
+
+#bilde {
+  position: relative;
+  margin: auto;
+  display: block;
+  right: 100px;
+}
+
 .App-title {
   font-size: 1.5em;
 }
@@ -23,6 +74,10 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
