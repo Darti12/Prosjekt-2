@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+// import dog from "../media/audio/woof1_short.mp3";
+
 /**
  * Component that plays chosen audio when one
  * presses the button on this component.
@@ -9,16 +11,16 @@ class AudioComponent extends Component {
         super(props);
         this._playSound = this._playSound.bind(this);
         this.state = {
-            audioHund: "hundbjeff.wav",
-            audioKatt: "",
-            audioElefant: "ElefantSnabelLyd.mp3"
+            audioHund: this.props.audio1,
+            audioKatt: this.props.audio2,
+            audioElefant: this.props.audio3
         }
     }
 
     render() {
         return (
             <div>
-                <button onClick={this._playSound()}>
+                <button onClick={this._playSound}>
                     Play {this._countFiles()} sound(s)
                 </button>
             </div>
@@ -34,14 +36,17 @@ class AudioComponent extends Component {
         // TODO: Make the audio play in the browser
         let ts = this.state;
         for (let key in ts) {
-            if (ts.hasOwnProperty(key) && ts[key] !== "") {
+            if (ts.hasOwnProperty(key) && ts[key] !== undefined) {
                 let file_name = ts[key];
                 let audio = new Audio(file_name);
                 audio.play().then(() =>
-                    console.log("Playing song ${file_name}")
+                    console.log("Playing song " + file_name)
                 );
             }
         }
+
+        let audio = new Audio();
+        audio.play().then(() => console.log("Playing dog"));
     }
 
     /**
@@ -60,15 +65,6 @@ class AudioComponent extends Component {
             }
         }
         return count;
-    }
-
-    // Better to pass data as props than to have functionality inside 'bottom'-component.
-    componentDidUpdate() {
-        let xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function () {
-            if (this.readyState = 4 && )
-        }
-
     }
 }
 
