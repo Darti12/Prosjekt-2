@@ -41,6 +41,7 @@ class Visuals extends Component {
   setImage(name) {
     if (this.state.image === name) {
       name = name.substring(0, name.length - 1) + this.getRandomInt();
+      console.log(name);
       return this.setImage(name);
     }
     axios.get(`./media/images/` + name + ".svg").then(response => {

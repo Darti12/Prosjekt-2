@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import Tab from "./Tab";
+import Tab from "./Tab.jsx";
 import Visuals from "./Visuals";
 
 class Tabs extends Component {
@@ -47,13 +47,7 @@ class Tabs extends Component {
         <div className="tab-content">
           {children.map(child => {
             if (child.props.label !== activeTab) return undefined;
-            return (
-              //Legg inn standard oppsett på taben her
-              <div>
-                <h1>Content!: </h1>
-                <Visuals />
-              </div>
-            );
+            return child.props.children;
           })}
         </div>
       </div>
