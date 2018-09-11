@@ -30,10 +30,6 @@ export default class TextComponent extends React.Component {
                 const poemData = res.data;
                 this.setState({dikt: poemData});
             });
-        this.elephantState();
-        this.elephantState();
-        this.elephantState();
-        this.elephantState();
     }
 
     /**
