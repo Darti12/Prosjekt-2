@@ -6,30 +6,28 @@ import AudioComponent from './AudioComponent.js';
  * Tab component that takes care of text, visuals and audio.
  */
 class Tab extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            audioHund: "",
-            audioKatt: "",
-            audioElefant: ""
-        }
+            audio: "",
+            visual: "",
+            text: ""
+        };
         this._getAudioFile = this._getAudioFile.bind(this);
-
     }
 
     render() {
         return (
             <div>
                 <h1>
-                    This is a tab
+                    {this.props.name}
                 </h1>
-                <AudioComponent hund={this.state.audioHund} katt={this.state.audioKatt} elefant={this.state.audioElefant}/>
+                <AudioComponent audio={this.audio}/>
                 <button onClick={this._getAudioFile}>
                     Get Audio File
                 </button>
                 <div id="test-para">
                 </div>
-
                 <label htmlFor="username">
                     File name (audio)
                     <input type="text" id = "audio_file_name"/>
@@ -40,11 +38,14 @@ class Tab extends Component {
 
     _getAudioFile() {
         let file_name = document.getElementById("audio_file_name").value;
-        if (!file_name.endsWith(".mp3")) {
-            let p = document.getElementById("test-para");
-            p.innerHTML = "<p>Not a valid format</p>"
+        let p = document.getElementById("test-para");
 
+        if (!file_name.endsWith(".mp3")) {
+            p.innerText = "Not a valid format";
+            return;
         }
+        p.innerText = "Finding song: " + file_name;
+
         let file_path = './media/audio/' + file_name;
         let myInit = { method: 'GET',
             headers: new Headers(),
@@ -61,7 +62,7 @@ class Tab extends Component {
                 let audio = new Audio(obj);
 
                  this.setState({
-                     audioHund: obj
+                     audio: obj
                  });
 
                 audio.play().then(() => {

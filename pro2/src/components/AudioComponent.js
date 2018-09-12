@@ -50,7 +50,7 @@ class AudioComponent extends Component {
      */
     _countFiles() {
         let count = 0;
-        let ts = this.state;
+        let ts = this.props;
         for (let key in ts) {
             // TODO: Consider making a _validFile function
             if (ts.hasOwnProperty(key) && ts[key] !== "") {
@@ -66,3 +66,5 @@ export default AudioComponent;
 // TODO: place sources for .mp3 correctly.
 // https://freesound.org/people/Princess6537/sounds/144885/
 // https://freesound.org/people/arightwizard/sounds/253754/
+// https://freesound.org/people/rhostik/sounds/220904/
+// https://freesound.org/people/CGEffex/sounds/85664/

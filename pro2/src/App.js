@@ -2,21 +2,15 @@ import React, { Component } from 'react';
 import './App.css';
 
 
-
 // components
-import Tabs from "./components/Tabs.jsx";
+import Display from "./components/Display.jsx";
 
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Tabs>
-          <div label="Tab 1" />
-          <div label="Tab 2" />
-          <div label="Tab 3" />
-          <div label="Tab 4" />
-        </Tabs>
+        <Display />
       </div>
     );
   }
