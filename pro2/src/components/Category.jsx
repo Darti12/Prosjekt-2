@@ -8,40 +8,40 @@ class Category extends Component {
     soundType: null
   };
 
-  hello() {
+  sendInfoUp() {
     console.log("text: " + this.state.textType);
     console.log("lyd: " + this.state.soundType);
     console.log("bilde: " + this.state.imageType);
+    this.props.onChangeValue(this.state);
   }
 
   handleChangeValueImage = e => {
-    this.state.imageType = e;
     this.setState({ imageType: e });
-    this.hello();
+    this.sendInfoUp();
   };
   handleChangeValueSound = e => {
-    this.state.soundType = e;
     this.setState({ soundType: e });
+    this.sendInfoUp();
   };
   handleChangeValueText = e => {
-    this.state.textType = e;
     this.setState({ textType: e });
+    this.sendInfoUp();
   };
   render() {
     return (
       <div id="Category-container">
         <Choices
-          type="Bilde"
+          type="image"
           value={this.state.imageType}
           onChangeValue={this.handleChangeValueImage}
         />
         <Choices
-          type="Lyd"
+          type="sound"
           value={this.state.soundType}
           onChangeValue={this.handleChangeValueSound}
         />
         <Choices
-          type="Text"
+          type="text"
           value={this.state.textType}
           onChangeValue={this.handleChangeValueText}
         />
