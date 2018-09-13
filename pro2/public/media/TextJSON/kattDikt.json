@@ -1,0 +1,30 @@
+[
+  {
+    "id" : 1,
+    "tittel": "Kattemannneen",
+    "firstLine": "En katt spiser gummi",
+    "secondLine": "Gummi er godt",
+    "thirdLine": "Men de kan ikke overleve dette"
+  },
+  {
+    "id": 2,
+    "tittel": "Kattedama",
+    "firstLine": "asdlasdnksajd",
+    "secondLine": "fkdsfflknsdfldnsdflfdnsl",
+    "thirdLine": "sdksdfksdkføjsdfkøsdfkødf"
+  },
+  {
+    "id": 3,
+    "tittel": "KatteBarna",
+    "firstLine": "dsødkfkøsdkøsdfkøsdføkdsfkdksø",
+    "secondLine": "sødfmdsfløsdfølsdømdøkkdsøt",
+    "thirdLine": "aaaaaaaaaaaaaaaaaaaaaaaaa"
+  },
+  {
+    "id": 4,
+    "tittel": "KattteDød",
+    "firstLine": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "secondLine": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "thirdLine": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+  }
+]
