@@ -9,7 +9,10 @@ class Tab extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            audio: "",
+            audio: {
+                name: "",
+                file: {}
+            },
             visual: "",
             text: ""
         };
@@ -22,30 +25,16 @@ class Tab extends Component {
                 <h1>
                     {this.props.name}
                 </h1>
-                <AudioComponent audio={this.audio}/>
-                <button onClick={this._getAudioFile}>
-                    Get Audio File
-                </button>
-                <div id="test-para">
-                </div>
-                <label htmlFor="username">
-                    File name (audio)
-                    <input type="text" id = "audio_file_name"/>
-                </label>
+                <AudioComponent audio={this.state.audio} getAudioFile={this._getAudioFile}/>
             </div>
         )
     }
 
-    _getAudioFile() {
-        let file_name = document.getElementById("audio_file_name").value;
-        let p = document.getElementById("test-para");
-
-        if (!file_name.endsWith(".mp3")) {
-            p.innerText = "Not a valid format";
+    _getAudioFile(file_name) {
+        if (file_name === this.state.audio.name){
+            console.log("Name equal");
             return;
         }
-        p.innerText = "Finding song: " + file_name;
-
         let file_path = './media/audio/' + file_name;
         let myInit = { method: 'GET',
             headers: new Headers(),
@@ -59,18 +48,21 @@ class Tab extends Component {
             })
             .then(blob => {
                 let obj = URL.createObjectURL(blob);
-                let audio = new Audio(obj);
 
-                 this.setState({
-                     audio: obj
-                 });
+                this.setState({
+                    audio: {
+                        name: file_name,
+                        file: obj
+                    }
+                });
 
-                audio.play().then(() => {
-                    console.log("Playing song.")
-                })
+                console.log("Changed state audio to: " + obj.toString());
+                return true;
             })
+
             .catch(error => {
                 console.log(error);
+                return false;
             })
     }
 }

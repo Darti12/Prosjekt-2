@@ -9,6 +9,7 @@ class Display extends Component {
       view: "tab1"
     };
     this._onNav = this._onNav.bind(this);
+    this._viewOne = this._viewOne.bind(this);
   }
 
   render() {
@@ -16,11 +17,10 @@ class Display extends Component {
       return (
         <div>
             <Navigation onNav={this._onNav}/>
-            {this.state.view === "tab1" ? <Tab id="tab1" name="Tab 1"/> : ""}
-            {this.state.view === "tab2" ? <Tab id="tab2" name="Tab 2"/> : ""}
-            {this.state.view === "tab3" ? <Tab id="tab3" name="Tab 3"/> : ""}
-            {this.state.view === "tab4" ? <Tab id="tab4" name="Tab 4"/> : ""}
-
+            {this.state.view === "tab1" ? <Tab id="tab1" name="Tab 1"/>: null}
+            {this.state.view === "tab2" ? <Tab id="tab2" name="Tab 2"/> : null}
+            {this.state.view === "tab3" ? <Tab id="tab3" name="Tab 3"/> : null}
+            {this.state.view === "tab4" ? <Tab id="tab4" name="Tab 4"/> : null}
 
         </div>
       )
@@ -30,6 +30,10 @@ class Display extends Component {
     this.setState( {
         view: current_view
     })
+  }
+
+  _viewOne() {
+
   }
 
 }
