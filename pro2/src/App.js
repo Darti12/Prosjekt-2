@@ -10,9 +10,18 @@ class App extends Component {
     soundType: null
   };
   getInfoFromCategories = info => {
-    this.setState({ textType: info.textType });
-    this.setState({ imageType: info.imageType });
-    this.setState({ soundType: info.soundType });
+    if (info.startsWith("Text")) {
+      console.log(info);
+      this.setState({ textType: info.substring(6, info.length) });
+    }
+    if (info.startsWith("Image")) {
+      console.log(info);
+      this.setState({ imageType: info.substring(7, info.length) });
+    }
+    if (info.startsWith("Sound")) {
+      console.log(info);
+      this.setState({ soundType: info.substring(7, info.length) });
+    }
   };
 
   render() {

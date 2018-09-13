@@ -9,23 +9,17 @@ class Category extends Component {
   };
 
   sendInfoUp() {
-    console.log("text: " + this.state.textType);
-    console.log("lyd: " + this.state.soundType);
-    console.log("bilde: " + this.state.imageType);
     this.props.onChangeValue(this.state);
   }
 
   handleChangeValueImage = e => {
-    this.setState({ imageType: e });
-    this.sendInfoUp();
+    this.props.onChangeValue("Image: " + e);
   };
   handleChangeValueSound = e => {
-    this.setState({ soundType: e });
-    this.sendInfoUp();
+    this.props.onChangeValue("Sound: " + e);
   };
   handleChangeValueText = e => {
-    this.setState({ textType: e });
-    this.sendInfoUp();
+    this.props.onChangeValue("Text: " + e);
   };
   render() {
     return (
