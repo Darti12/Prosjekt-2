@@ -6,60 +6,68 @@ import TextComponent from "./TextComponent";
  * Tab component that takes care of text, visuals and audio.
  */
 class Tab extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        text: {
-            category: "",
-            selectionNumber: null,
-
-        }
-    };
-    this._getAudioFile = this._getAudioFile.bind(this);
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>This is a tab</h1>
-          <TextComponent text={this.state.text}/>
-      </div>
-    );
-  }
-
-  _getAudioFile() {
-    let file_name = document.getElementById("audio_file_name").value;
-    if (!file_name.endsWith(".mp3")) {
-      let p = document.getElementById("test-para");
-      p.innerHTML = "<p>Not a valid format</p>";
+    constructor(props) {
+        super(props);
+        this.state = {
+            audio: {
+                name: "",
+                file: {}
+            },
+            visual: "",
+            text: {
+                category: "",
+                selectionNumber: null,
+            }
+        };
+        this._getAudioFile = this._getAudioFile.bind(this);
     }
-    let file_path = "./media/audio/" + file_name;
-    let myInit = {
-      method: "GET",
-      headers: new Headers(),
-      mode: "cors",
-      cache: "default"
-    };
 
-    fetch(file_path, myInit)
-      .then(response => {
-        return response.blob();
-      })
-      .then(blob => {
-        let obj = URL.createObjectURL(blob);
-        let audio = new Audio(obj);
+    render() {
+        return (
+            <div>
+                <h1>
+                    {this.props.name}
+                </h1>
+                <AudioComponent audio={this.state.audio} getAudioFile={this._getAudioFile}/>
+                <TextComponent />
+            </div>
+        )
+    }
 
-        this.setState({
-          audioHund: obj
-        });
+  _getAudioFile(file_name) {
+        if (file_name === this.state.audio.name){
+            console.log("Name equal");
+            return;
+        }
+        let file_path = './media/audio/' + file_name;
+        let myInit = {
+            method: 'GET',
+            headers: new Headers(),
+            mode: 'cors',
+            cache: 'default'
+        };
 
-        audio.play().then(() => {
-          console.log("Playing song.");
-        });
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }
+        fetch(file_path, myInit)
+            .then(response => {
+                return response.blob();
+            })
+            .then(blob => {
+                let obj = URL.createObjectURL(blob);
+                let a = new Audio(obj);
+                this.setState({
+                    audio: {
+                        name: file_name,
+                        file: a
+                    }
+                });
+
+                console.log("Changed state audio to: " + obj.toString());
+                return true;
+            })
+            .catch(error => {
+                console.log(error);
+                return false;
+            })
+    }
 }
 export default Tab;
