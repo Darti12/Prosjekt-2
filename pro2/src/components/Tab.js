@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
-import AudioComponent from './AudioComponent.js';
-
+import React, { Component } from "react";
+import AudioComponent from "./AudioComponent.js";
+import TextComponent from "./TextComponent";
 
 /**
  * Tab component that takes care of text, visuals and audio.
@@ -14,7 +14,10 @@ class Tab extends Component {
                 file: {}
             },
             visual: "",
-            text: ""
+            text: {
+                category: "",
+                selectionNumber: null,
+            }
         };
         this._getAudioFile = this._getAudioFile.bind(this);
     }
@@ -26,11 +29,12 @@ class Tab extends Component {
                     {this.props.name}
                 </h1>
                 <AudioComponent audio={this.state.audio} getAudioFile={this._getAudioFile}/>
+                <TextComponent />
             </div>
         )
     }
 
-    _getAudioFile(file_name) {
+  _getAudioFile(file_name) {
         if (file_name === this.state.audio.name){
             console.log("Name equal");
             return;
@@ -60,13 +64,10 @@ class Tab extends Component {
                 console.log("Changed state audio to: " + obj.toString());
                 return true;
             })
-
             .catch(error => {
                 console.log(error);
                 return false;
             })
     }
 }
-
-
 export default Tab;
