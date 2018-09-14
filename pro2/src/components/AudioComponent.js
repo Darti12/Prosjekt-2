@@ -44,7 +44,6 @@ class AudioComponent extends Component {
         let audio_player = current_audio.file;
         audio_player.play().then(() => {
             console.log("hello");
-
         })
     }
 
