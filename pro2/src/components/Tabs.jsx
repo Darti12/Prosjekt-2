@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Tab from "./Tab.jsx";
-import Visuals from "./Visuals";
 
 class Tabs extends Component {
+  state = {
+    activeTab: this.props.children[0].props.label
+  };
   static propTypes = {
     children: PropTypes.instanceOf(Array).isRequired
   };
 
   constructor(props) {
     super(props);
-
-    this.state = {
+    this.State += {
       activeTab: this.props.children[0].props.label
     };
   }
@@ -28,6 +29,7 @@ class Tabs extends Component {
       props: { children },
       state: { activeTab }
     } = this;
+
     return (
       <div className="tabs">
         <ol className="tab-list">
