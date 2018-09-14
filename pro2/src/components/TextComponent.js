@@ -2,6 +2,8 @@ import React from 'react';
 
 import axios from 'axios';
 
+
+
 export default class TextComponent extends React.Component {
 
     /**
@@ -12,99 +14,32 @@ export default class TextComponent extends React.Component {
         super(props);
         this.state = {
             dikt: [],
-            diktID: null,
-            hundeState: [],
-            katteState: [],
-            elefantState: []
-
+            selecetionNumber: 1,
+            kategoriDikt: "hund"
         };
 
     }
 
     /**
-     * Henter inn JSON filen med diktene våre og setter dikt arrayen til å holde på disse
+     * Henter inn JSON filen med diktene våre og setter dikt arrayen til å holde på det ene dikten som blir valgt
      */
     componentDidMount() {
-        axios.get('./media/TextJSON/HelloWorld.json')
+
+        axios.get('./media/TextJSON/'+this.state.kategoriDikt
+        +'Dikt.json')
             .then(res => {
-                const poemData = res.data;
+                const poemData = res.data.slice(this.state.selecetionNumber-1, this.state.selecetionNumber);
                 this.setState({dikt: poemData});
             });
+
     }
 
-    /**
-     * catState er en hjelpefunksjon for å hente inn en tabell for rekkefølgen, uten gjenvalg på hvilket jsonText objekt som skal leses inn
-     * i selve textComponenten
-     */
-    catState(){
-        let index = Math.round(Math.random()*4+0.5);
-        if (this.state.katteState.indexOf(index) === -1){
-            this.setState({
-                diktID: index,
-                katteState: this.state.katteState.push(index)
-            });
-        }
-        else{
-            if (this.state.katteState.length === 4){
-            }
-            else{
-                this.catState()
-            }
-        }
-    }
-    /**
-     * dogState er en hjelpefunksjon for å hente inn en tabell for rekkefølgen, uten gjenvalg på hvilket jsonText objekt som skal leses inn
-     * i selve textComponenten
-     */
-    dogState(){
-        let index = Math.round(Math.random()*4 +4.5);
-        if (this.state.hundeState.indexOf(index) === -1){
-            this.setState({
-                diktID: index,
-                hundeState: this.state.hundeState.push(index)
-            });
-        }
-        else{
-
-            if (this.state.hundeState.length === 4){
-            }
-            else{
-                this.dogState()
-            }
-        }
-    }
-
-    /**
-     * elePhantState er en hjelpefunksjon for å hente inn en tabell for rekkefølgen, uten gjenvalg på hvilket jsonText objekt som skal leses inn
-     * i selve textComponenten
-     */
-    elephantState(){
-        let index = Math.round(Math.random()*4 +8.5);
-        if (this.state.elefantState.indexOf(index) === -1){
-            this.setState({
-                diktID: index,
-                elefantState: this.state.elefantState.push(index)
-            });
-        }
-        else{
-            if (this.state.elefantState.length === 4){
-            }
-            else{
-                this.elephantState()
-            }
-        }
-    }
-
-    /**
-     * Henter ut resultatet fra axios kallet og itererer gjennom alle alternativene helt til den som stemmer overens med diktId
-     * er valgt. SÅ skriver den ut diktet.
-     */
     render() {
 
         return (
                 <React.Fragment>
                 {this.state.dikt.map(poem => {
-                        return poem.id === this.state.diktID ?
+                        return poem.id === this.state.selecetionNumber ?
                             <div key={poem.id} className={"diktTekst"}>
                             <p className={"diktTittel"} >{poem.tittel}</p>
                             <p>{poem.firstLine}</p>

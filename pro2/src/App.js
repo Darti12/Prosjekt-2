@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import TextComponent from "./components/TextComponent";
 import Tabs from "./components/Tabs.jsx";
 import Category from "./components/Category";
 
@@ -27,9 +28,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Tabs>
+
+        <Tabs>          
           <div label="tab1" typer={this.state}>
             dette er tab1
+            <TextComponent/>
           </div>
           <div label="tab2" typer={this.state}>
             dette er tab2

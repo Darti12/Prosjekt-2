@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AudioComponent from "./AudioComponent.js";
+import TextComponent from "./TextComponent";
 
 /**
  * Tab component that takes care of text, visuals and audio.
@@ -8,9 +9,11 @@ class Tab extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      audioHund: "",
-      audioKatt: "",
-      audioElefant: ""
+        text: {
+            category: "",
+            selectionNumber: null,
+
+        }
     };
     this._getAudioFile = this._getAudioFile.bind(this);
   }
@@ -19,18 +22,7 @@ class Tab extends Component {
     return (
       <div>
         <h1>This is a tab</h1>
-        <AudioComponent
-          hund={this.state.audioHund}
-          katt={this.state.audioKatt}
-          elefant={this.state.audioElefant}
-        />
-        <button onClick={this._getAudioFile}>Get Audio File</button>
-        <div id="test-para" />
-
-        <label htmlFor="username">
-          File name (audio)
-          <input type="text" id="audio_file_name" />
-        </label>
+          <TextComponent text={this.state.text}/>
       </div>
     );
   }
