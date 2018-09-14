@@ -36,7 +36,8 @@ class Tab extends Component {
             return;
         }
         let file_path = './media/audio/' + file_name;
-        let myInit = { method: 'GET',
+        let myInit = {
+            method: 'GET',
             headers: new Headers(),
             mode: 'cors',
             cache: 'default'
@@ -48,11 +49,11 @@ class Tab extends Component {
             })
             .then(blob => {
                 let obj = URL.createObjectURL(blob);
-
+                let a = new Audio(obj);
                 this.setState({
                     audio: {
                         name: file_name,
-                        file: obj
+                        file: a
                     }
                 });
 

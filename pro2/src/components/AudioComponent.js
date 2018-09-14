@@ -8,23 +8,26 @@ class AudioComponent extends Component {
     constructor(props) {
         super(props);
         this._playSound = this._playSound.bind(this);
+        this._fetchSound = this._fetchSound.bind(this);
     }
 
     render() {
         return (
             <div>
-                <button onClick={this._playSound}>
-                    Play sound
-                </button>
                 <div>
                     <p id="test-para" >
-
                     </p>
                 </div>
                 <label htmlFor="username">
                     File name (audio)
                     <input type="text" id ="audio_file_name" defaultValue="cat_meow1.mp3"/>
                 </label>
+                <button onClick={this._fetchSound}>
+                    Fetch sound
+                </button>
+                <button onClick={this._playSound}>
+                    Play sound
+                </button>
             </div>
         )
     }
@@ -35,6 +38,18 @@ class AudioComponent extends Component {
      * @private
      */
     _playSound() {
+        let current_audio = this.props.audio;
+
+        console.log("Right beforeplaying: " + current_audio.file.toString());
+        let audio_player = current_audio.file;
+        audio_player.play().then(() => {
+            console.log("hello");
+
+        })
+    }
+
+    _fetchSound() {
+
         let input_file = document.getElementById("audio_file_name").value;
         let p = document.getElementById("test-para");
 
@@ -46,16 +61,10 @@ class AudioComponent extends Component {
 
         let current_audio = this.props.audio;
 
-        p.innerText = "Looking for sound: " + input_file;
+
         if (input_file === current_audio.name) {
             p.innerText = "File already selected";
-            return;
         }
-        console.log("Right beforeplaying: " + current_audio.file.toString());
-        let audio_player = new Audio(current_audio.file);
-        audio_player.play().then(() => {
-            p.innerText = "Playing sound: " + input_file;
-        })
     }
 }
 
